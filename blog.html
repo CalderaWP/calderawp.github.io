@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Caldera Labs: We Make Badass WordPress Shit</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/caldera logo.png" alt="" /></span><span class="title">Caldera Labs</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1>News and Articles From Caldera Labs</h1>
+								<p>
+									Collected blog posts and news updates from <a href="https://CalderaWP.com" title="CalderaWP Site">CalderaWP</a> and <a href="https://IngotHQ.com" title="Ingot: Do More, Convert Less">Ingot</a>, as well as the personal blogs of our team members <a href="http://JoshPress.net" title="Josh's blog">Josh Pollock</a>, <a href="http://cramer.co.za/" title="David's blog">David Cramer</a> and <a href="http://christiechirinos.com/" title="Christie's blog">Christie Chirinos</a>.
+								</p>
+							</header>
+							<section class="tiles" id="blog">
+
+							</section>
+
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<!-- Contact Form
+							<section>
+								<h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="field half first">
+										<input type="text" name="name" id="name" placeholder="Name" />
+									</div>
+									<div class="field half">
+										<input type="email" name="email" id="email" placeholder="Email" />
+									</div>
+									<div class="field">
+										<textarea name="message" id="message" placeholder="Message"></textarea>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="special" /></li>
+									</ul>
+								</form>
+							</section>
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="http://www.twitter.com/calderawp" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="http://www.facebook.com/calderawp" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="mailto:christie@calderawp.com" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+						-->
+							<ul class="copyright">
+								<li>&copy; Caldera Labs Inc. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <!--[if lte IE 8]>
+        <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="assets/js/main.js"></script>
+
+
+        <script type="text/html" id="tmpl--blog">
+            <article class="style3 multi-blog-{{prefix}}">
+                <span class="image">
+                    <img src="placeholder.png" alt="" class="img-{{prefix}}" data-media-id="{{featured_media}}" />
+                </span>
+                <a href="{{link}}" title="Read Full Post">
+                    <h2>{{title.rendered}}</h2>
+                    <div class="content">
+                        <p>
+                            {{excerpt.rendered}}
+                        </p>
+                    </div>
+                </a>
+            </article>
+        </script>
+
+        <script src="assets/js/underscores.js"></script>
+        <script src="assets/js/rest-lazyload-img.js"></script>
+        <script src="assets/js/multi-blog.js"></script>
+
+        <script>
+            jQuery( document ).ready( function ( $ ) {
+
+
+                var blog = new MultiBlog();
+                blog.init();
+                var $body = $( 'body' );
+                $body.on( 'multiBlog.init', function ( e ) {
+                    blog.render( 'blog', 'tmpl--blog' );
+                } );
+                $body.on( 'multiBlog.rendered', function ( e ) {
+                    $( ".img-ing" ).RESTimgLoader( {
+                        root: 'https://ingothq.com/wp-json'
+                    } );
+                    $( ".img-cwp" ).RESTimgLoader( {
+                        root: 'https://calderawp.com/wp-json'
+                    } );
+                    $( ".img-jp" ).RESTimgLoader( {
+                        root: 'http://joshpress.net/wp-json'
+                    } );
+                } );
+
+            } );
+        </script>
+
+    </body>
+</html>
