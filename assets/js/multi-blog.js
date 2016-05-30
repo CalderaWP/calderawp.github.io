@@ -12,12 +12,9 @@ function MultiBlog() {
             self.getIngot(),
             self.getJoshPress()
         ).then(function(  dIngot, dJosh, dCWP ) {
-
             all = self.merge( dJosh, dIngot );
             all = self.merge( dCWP, dJosh );
             all = self.sort( all, 'date' );
-            console.log( all );
-
             $( 'body' ).triggerHandler( 'multiBlog.init' );
 
         });
@@ -45,7 +42,7 @@ function MultiBlog() {
     };
 
     this.api = function( url, prefix ) {
-        var key = 'clCache' + url;
+        var key = 'clCache' + url.replace(/^https?\:\/\//i, "");
         var timeKey = 'time' + key;
         var local;
 
@@ -81,7 +78,7 @@ function MultiBlog() {
     };
 
     this.getCurrentTime = function () {
-        if ( 0 !== currentTime ) {
+        if ( 0 == currentTime ) {
             currentTime = Math.round(new Date().getTime()/1000);
         }
         return currentTime;
