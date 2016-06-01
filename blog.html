@@ -13,6 +13,21 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <style>
+
+            .tiles article.style3 > .image:before {opacity: .3;}
+            .tiles article > .image:after {content: none;}
+            .tiles article > .image {overflow: visible;
+                min-height: 260px;}
+            span.bgbox {
+                background-size: cover;
+                min-height: 260px;
+            }
+            .multi-blog {
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -114,16 +129,16 @@
 
 
         <script type="text/html" id="tmpl--blog">
-            <article class="style3 multi-blog-{{prefix}}">
+            <article class="style3 multi-blog multi-blog-{{prefix}}">
                 <span class="image">
                     <img src="placeholder.png" alt="" class="img-{{prefix}}" data-media-id="{{featured_media}}" />
                 </span>
                 <a href="{{link}}" title="Read Full Post">
                     <h2>{{title.rendered}}</h2>
                     <div class="content">
-                        <!--<p>
+                        <p>
                             {{excerpt.rendered}}
-                        </p>-->
+                        </p>
                     </div>
                 </a>
             </article>

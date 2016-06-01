@@ -58,6 +58,15 @@ function RESTimgLoader( root ) {
                 if ( r.alt ){
                     $img.attr( 'alt', r.alt );
                 }
+                $img.css( 'visibility', 'hidden' ).attr( 'aria-hidden', true );
+                $img.parent().parent().css('background-image', 'url(' + r.src + ')').hover( function (  ) {
+                    $( this ).children().css(  'color', '#585858'  ).children().css(  'color', '#585858'  );
+                    $img.parent().parent().css('background-image', '' );
+                }, function() {
+                    $( this ).children().css(  'color', '#fff'  ).children().css(  'color', '#fff'  );
+                    $img.parent().parent().css('background-image', 'url(' + r.src + ')');
+                });
+
             } );
         }
     }
