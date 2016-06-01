@@ -13,7 +13,7 @@ function MultiBlog() {
             self.getJoshPress()
         ).then(function(  dIngot, dJosh, dCWP ) {
             all = self.merge( dJosh, dIngot );
-            all = self.merge( dCWP, dJosh );
+            all = self.merge( dCWP, all );
             all = self.sort( all, 'date' );
             $( 'body' ).triggerHandler( 'multiBlog.init' );
 
