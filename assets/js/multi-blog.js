@@ -42,7 +42,7 @@ function MultiBlog() {
     };
 
     this.api = function( url, prefix ) {
-        var key = 'clCache' + url.replace(/^https?\:\/\//i, "");
+        var key = 'clC' + url.replace(/^https?\:\/\//i, "");
         var timeKey = 'time' + key;
         var local;
 
