@@ -85,7 +85,7 @@ function MultiBlog() {
     };
 
     this.getJoshPress = function ( ) {
-        return self.api( 'http://joshpress.net/wp-json/wp/v2/posts', 'jp' );
+        return self.api( 'https://joshpress.net/wp-json/wp/v2/posts', 'jp' );
     };
 
     this.getCWP = function ( ) {
