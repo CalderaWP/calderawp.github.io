@@ -3362,3 +3362,13 @@ a:hover {
 	color:#ff7e30 !important;
 }
 
+#header span.title {
+	color: white;
+}
+
+#header{
+	background: url('../../images/Rinjani_Caldera.jpg' ) no-repeat;
+	background-position-y: 70%;
+	background-size: cover;
+}
+
