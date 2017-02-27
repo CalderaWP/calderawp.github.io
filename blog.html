@@ -171,7 +171,7 @@
         <script src="assets/js/main-min.js"></script>
         <script src="assets/js/underscores-min.js"></script>
         <script src="assets/js/rest-lazyload-img.js"></script>
-        <script src="assets/js/multi-blog.js"></script>
+        <script src="assets/js/multi-blog.min.js"></script>
 
         <script>
             jQuery( document ).ready( function ( $ ) {
@@ -182,11 +182,11 @@
                     blog.render( 'blog', 'tmpl--blog' );
                 } );
                 $body.on( 'multiBlog.rendered', function ( e ) {
-                    $( ".img-ing" ).RESTimgLoader( {
-                        root: 'https://ingothq.com/wp-json'
+                    $( ".img-cc" ).RESTimgLoader( {
+                        root: 'https://blog.christiechirinos.com/wp-json'
                     } );
-                    $( ".img-cwp" ).RESTimgLoader( {
-                        root: 'https://calderawp.com/wp-json'
+                    $( ".img-cf" ).RESTimgLoader( {
+                        root: 'https://calderaforms.com/wp-json'
                     } );
                     $( ".img-jp" ).RESTimgLoader( {
                         root: 'https://joshpress.net/wp-json'

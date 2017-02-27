@@ -9,10 +9,11 @@ function MultiBlog() {
 
         $.when(
             self.getCF(),
-            self.getJoshPress()
-        ).then(function(  dIngot, dJosh, dCWP ) {
-            all = self.merge( dJosh, dIngot );
-            all = self.merge( dCWP, all );
+            self.getJoshPress(),
+            self.getCC()
+        ).then(function(  d1, d2, d3 ) {
+            all = self.merge( d1, d2 );
+            all = self.merge( d3, all );
             all = self.sort( all, 'date' );
             $( 'body' ).triggerHandler( 'multiBlog.init' );
 
@@ -95,6 +96,9 @@ function MultiBlog() {
         return self.api( 'https://calderaforms.com/wp-json/wp/v2/posts', 'cf' );
     };
 
+    this.getCC = function ( ) {
+        return self.api( 'https://blog.christiechirinos.com/wp-json/wp/v2/posts', 'cc' );
+    };
 
     this.getIngot = function () {
         return self.api( 'https://ingothq.com/wp-json/wp/v2/posts', 'ing' );
@@ -121,7 +125,6 @@ function MultiBlog() {
 
         return items;
     };
-
 
 
 }
