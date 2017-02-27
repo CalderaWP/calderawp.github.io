@@ -8,8 +8,7 @@ function MultiBlog() {
     this.init = function( render ) {
 
         $.when(
-            self.getCWP(),
-            self.getIngot(),
+            self.getCF(),
             self.getJoshPress()
         ).then(function(  dIngot, dJosh, dCWP ) {
             all = self.merge( dJosh, dIngot );
@@ -90,6 +89,10 @@ function MultiBlog() {
 
     this.getCWP = function ( ) {
         return self.api( 'https://calderawp.com/wp-json/wp/v2/posts', 'cwp' );
+    };
+
+    this.getCF = function ( ) {
+        return self.api( 'https://calderaforms.com/wp-json/wp/v2/posts', 'cf' );
     };
 
 
