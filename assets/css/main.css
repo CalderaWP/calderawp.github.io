@@ -3372,3 +3372,6 @@ a:hover {
 	background-size: cover;
 }
 
+.team-member {
+	min-height: 250px;
+}
