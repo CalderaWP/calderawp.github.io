@@ -97,7 +97,7 @@ function MultiBlog() {
     };
 
     this.getCC = function ( ) {
-        return self.api( 'https://blog.christiechirinos.com/wp-json/wp/v2/posts', 'cc' );
+        return self.api( 'http://christiechirinos.com/wp-json/wp/v2/posts', 'cc' );
     };
 
     this.getIngot = function () {
